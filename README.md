@@ -3,6 +3,8 @@ FOODIE
 
 ![banner.png](banner.png)
 
+__Check out our demonstration video!__ [http://y2u.be/mTuCgdc7Ro4](http://y2u.be/mTuCgdc7Ro4)
+
 __FOODIE__ is the flagship product of StadiumTech! FOODIE offers a quick and easy way for you to receive in-the-stands delivery, in _any_ sports stadium throughout the United States! Order from your mobile phone and never miss the highlights again!
 
 Who made this?
