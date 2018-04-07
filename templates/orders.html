@@ -1,0 +1,62 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+
+<h1> Currently placed orders: </h1>
+
+	{% if orders | length != 0 %}
+
+		{% for order in orders %}
+			<div class="order" id="{{order.id}}">
+				<h3> Seat Number: {{ order.seat_number }} </h3>
+<pre>
+{{ order.contents }}
+</pre>
+<p></p>
+<i><span>Status: <b>PENDING</b></span></i>
+
+			</div>
+		{% endfor %}
+
+	{% else %}
+		<br><br>
+		<h1 style="text-align: center; opacity: 0.3"> No orders have been placed yet. :( </h1>
+	{% endif %}
+
+
+<script>
+
+		$('.order').click(function(){
+			span = $(this).find('span')
+			status = span.html()
+			if ( status == 'Status: <b>PENDING</b>' ){
+				$(this).css('background-color', 'lightyellow')
+				$(this).css('box-shadow', '0px 0px 5px gold')
+				$(this).css('border-color', 'brown')
+				span.html('Status: <b style="color:brown">WORKING</b>')
+			}
+			if ( status == 'Status: <b style="color:brown">WORKING</b>' ){
+				$(this).css('background-color', 'lightgreen')
+				$(this).css('border-color', 'green')
+				$(this).css('box-shadow', '0px 0px 15px lightgreen')
+				span.html('Status: <b style="color:green">DELIVERING</b>')
+			}
+			if ( status == 'Status: <b style="color:green">DELIVERING</b>' ){
+				success = confirm("Has this order been delivered? If 'OK' is clicked, this order will be removed. If 'Cancel' is selected, the order will return to PENDING.")
+				if ( success ){
+					// alert("OK was clicked!")
+					$.post('/complete_order/' + $(this).attr('id'))
+					$(this).fadeOut("fast")
+				}else{
+					$(this).css('background-color', '#eaeaea')
+					$(this).css('box-shadow', '0px 0px 10px silver')
+					$(this).css('border-color', 'silver')
+					span.html('Status: <b>PENDING</b>')					
+				}
+			}
+		});
+
+</script>
+
+
+{% endblock %}

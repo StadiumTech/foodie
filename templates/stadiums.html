@@ -1,0 +1,28 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+
+<h1> What stadium are you in? </h1>
+
+<!-- <form action='#' method="POST"> -->
+
+	<!-- <ul> -->
+	<div style="text-align: center; ">
+	{% for stadium in stadiums %}
+		<a href="{{ url_for('stadium', stadium_id= stadium.id ) }}">
+			<img  src="{{ url_for('static', filename=stadium.logo) }}">
+		</a>
+	{% endfor %}
+	</div>
+	<!-- </ul> -->
+
+<!-- </form> -->
+
+<script>
+	$('img').click(function(){
+
+		$.post(window.location.href, data)
+	})
+</script>
+
+{% endblock %}

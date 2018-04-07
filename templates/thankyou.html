@@ -1,0 +1,24 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+
+<h1> Thanks! Your order has been placed! </h1>
+
+
+	Thanks for ordering with FOODIE! 
+
+	Your receipt is as follows:
+
+<pre>
+{{ receipt }}
+</pre>	
+
+<p>
+Your food will be delivered to seat number <b>{{seat_number}}</b>!
+</p>
+<form>
+<button onclick="window.location='/'">Take me Back</button>
+</form>
+
+
+{% endblock %}

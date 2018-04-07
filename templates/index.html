@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> FOODIE - By StadiumTech  </title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+	</head>
+	<body>
+
+		<header>
+			<a href="{{url_for('index')}}"><h1> FOODIE </h1></a>
+
+		</header>
+		
+		<nav>
+			<a href="{{ url_for('index') }}">Home</a> | 
+			<a href="{{ url_for('about') }}">About</a> | 
+			<a href="{{ url_for('contact') }}">Contact</a> |
+			<a href="{{ url_for('about') }}">Login</a>
+		</nav>
+
+		<footer> &nbsp; </footer>
+
+		<section>
+			{{ content | safe }}
+		</section>
+
+	</body>
+</html>

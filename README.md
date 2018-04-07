@@ -6,7 +6,7 @@ __FOODIE__ is the flagship product of StadiumTech! FOODIE offers a quick and eas
 Who made this?
 --------------
 
-StadiumTech, an in-house company that offers technology to make your sports experience better! Our motto: _"A touchdown for technology."_
+StadiumTech, an in-house company that offers technology to make your sports experience better! Our motto: _"Never miss a pitch!"_
 
 
 No, _who_ really made this?
@@ -26,7 +26,7 @@ Why did you make this?
 
 Say that you are seated at the big game. Say you finally got the kids out of the car, say you finally got your spouse to find the seats, and all you want to do is sit, relax, and enjoy the game. 
 
-But... you hear your stomach growling. You're hungry. Shoot, the game is just getting start!
+But... you hear your stomach growling. You're hungry. Shoot, the game is just getting started!
 
 Here is where FOODIE comes in.
 
@@ -46,3 +46,4 @@ Disclaimer
 -----------
 
 _This page and all content is only developed for a Hackathon competition at the University of Connecticut; it is by no means a legitimate company or product._
+

@@ -1,0 +1,28 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+
+<h1> {{ question }} </h1>
+
+<!-- <form action='#' method="POST"> -->
+
+	<!-- <ul> -->
+	<div style="text-align: center; ">
+	{% for restaurant in restaurants %}
+		<a href="{{ url_for('restaurant', restaurant_id = restaurant.id) }}">
+			<img src="{{ url_for('static', filename=restaurant.logo) }}" alt="{{restaurant.name}}">
+		</a>
+	{% endfor %}
+	</div>
+	<!-- </ul> -->
+
+<!-- </form> -->
+
+<script>
+	$('img').click(function(){
+
+		$.post(window.location.href, data)
+	})
+</script>
+
+{% endblock %}

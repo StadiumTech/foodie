@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> FOODIE - By StadiumTech  </title>
+		<meta charset="utf-8">
+		<!-- <meta name="viewport" content=" initial-scale=1"> -->
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+	</head>
+	<body>
+
+		<header>
+			<a href="{{url_for('index')}}"><h1> FOODIE </h1></a>
+		</header>
+		
+		<nav>
+			<a href="{{ url_for('index') }}">Home</a> | 
+			<a href="{{ url_for('about') }}">About</a> | 
+			<a href="{{ url_for('contact') }}">Contact</a>
+		</nav>
+
+		<footer> {% with messages = get_flashed_messages(with_categories=true) %}
+			  {% if messages %}
+			    
+			    {% for category, message in messages %}
+			      <span class="{{ category }}">{{ message }}</span>
+			    {% endfor %}
+			   {% endif %}
+
+			   {% endwith %}
+		</footer>
+
+		<section>
+			{% block content %}{% endblock %}
+		</section>
+
+	</body>
+</html>

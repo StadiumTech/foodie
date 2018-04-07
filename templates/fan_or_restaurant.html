@@ -1,0 +1,20 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+
+<h1> Are you a food server or customer? </h1>
+
+<form id="buttons_form" action='#' method="POST">
+
+	<a href="{{url_for('food_server')}}">
+		<img id="student_button" src="{{ url_for('static', filename='img/food_server_real.png') }}">
+	</a>
+	
+	<a href="{{url_for('customer')}}">
+		<img id="teacher_button" src="{{ url_for('static', filename='img/customer.png') }}">
+	</a>
+
+</form>
+
+
+{% endblock %}

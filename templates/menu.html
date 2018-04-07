@@ -1,0 +1,78 @@
+{% extends "base_page.html" %}
+
+{% block content %}
+
+<h1> What would you like to order? </h1>
+
+<!-- <form action='#' method="POST"> -->
+
+
+	<div style="text-align: center; ">
+	<form action="#" method="POST">
+	<ul>
+
+	{% for menu_item in menu_items %}
+
+		<li>
+			<input type="hidden" disabled="true" name="price_{{loop.index}}" value="{{menu_item.price}}">
+			<input type="checkbox" name="order_{{loop.index}}" value="{{menu_item.name}}">
+			<input type="number" name="quantity_{{loop.index}}" disabled="true" min="1" max="50"> 
+			{{menu_item.name}} ... <b>${{menu_item.price}}</b>
+		</li>
+	{% endfor %}
+	
+
+	</ul>
+		<p>
+			<b>What is your seat number?</b>
+		</p>
+		<input type="text" name="seat_number"><br>
+
+		<input type="submit" value="Place Order">
+	</form>
+	</div>
+	
+<script>
+	
+	$(document).ready(function(){
+		$('input[type=submit]').prop("disabled", "disabled");
+	});
+
+
+
+	$('form').submit(function(){
+
+		if ( $('input[name=seat_number]').val() == "" ){
+
+			alert("You must enter your seat number!")
+			return false;
+		}
+	});
+
+	$('input[type=checkbox]').click(function(){
+
+		if ($(this).is(':checked')) {
+			$(this).prev().prop("disabled", false);
+			$(this).next().prop("disabled", false);
+			$(this).next().val('1')
+		}else{
+			$(this).prev().prop("disabled", true);
+			$(this).next().prop("disabled", true);
+			$(this).next().val('')
+		}
+	});
+
+	$('input[type=text]').keyup(function(){
+
+		if ( $(this).val().length != 0 ){
+			$('input[type=submit]').prop("disabled", false);
+		}else{
+			$('input[type=submit]').prop("disabled", true);
+		}
+	});
+
+	
+
+</script>
+
+{% endblock %}
